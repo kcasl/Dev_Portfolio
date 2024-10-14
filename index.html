@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ddd;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .portfolio-item {
+            margin-bottom: 30px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* 페이지에 따라 보이도록 설정 */
+        #about, #portfolio, #contact {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 네비게이션 바 -->
+    <nav>
+        <a href="about.html" onclick="showPage('about')">About Me</a>
+        <a href="portfolio.html" onclick="showPage('portfolio')">Portfolio</a>
+        <a href="contact.html" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <!-- About Me 섹션 -->
+    <div id="about" class="content active">
+        <h1>About Me</h1>
+        <p>안녕하세요! 저는 웹 개발을 좋아하는 개발자입니다. 다양한 프로젝트와 기술을 활용하여 웹 페이지와 애플리케이션을 만드는 것에 관심이 많습니다.</p>
+    </div>
+
+    <!-- Portfolio 섹션 -->
+    <div id="portfolio" class="content">
+        <h1>Portfolio</h1>
+        <div class="portfolio-item">
+            <img src="https://via.placeholder.com/600" alt="Project 1">
+            <p>프로젝트 1 설명: 이 프로젝트는 ... 입니다.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://via.placeholder.com/600" alt="Project 2">
+            <p>프로젝트 2 설명: 이 프로젝트는 ... 입니다.</p>
+        </div>
+    </div>
+
+    <!-- Contact 섹션 -->
+    <div id="contact" class="content">
+        <h1>Contact</h1>
+        <p>이메일: example@example.com</p>
+        <p>전화번호: 010-1234-5678</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // 모든 페이지를 숨기고 선택한 페이지만 표시
+            document.getElementById('about').classList.remove('active');
+            document.getElementById('portfolio').classList.remove('active');
+            document.getElementById('contact').classList.remove('active');
+            
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
