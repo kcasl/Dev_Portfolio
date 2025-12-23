@@ -4,99 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 네비게이션 바 스타일 */
-        nav {
-            background-color: #333;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #ddd;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .portfolio-item {
-            margin-bottom: 30px;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        /* 페이지에 따라 보이도록 설정 */
-        #about, #portfolio, #contact {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 네비게이션 바 -->
-    <nav>
-        <a href="about.html" onclick="showPage('about')">About Me</a>
-        <a href="portfolio.html" onclick="showPage('portfolio')">Portfolio</a>
-        <a href="contact.html" onclick="showPage('contact')">Contact</a>
-    </nav>
-
-    <!-- About Me 섹션 -->
-    <div id="about" class="content active">
-        <h1>About Me</h1>
-        <p>안녕하세요! 저는 웹 개발을 좋아하는 개발자입니다. 다양한 프로젝트와 기술을 활용하여 웹 페이지와 애플리케이션을 만드는 것에 관심이 많습니다.</p>
-    </div>
-
-    <!-- Portfolio 섹션 -->
-    <div id="portfolio" class="content">
-        <h1>Portfolio</h1>
-        <div class="portfolio-item">
-            <img src="https://via.placeholder.com/600" alt="Project 1">
-            <p>프로젝트 1 설명: 이 프로젝트는 ... 입니다.</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="https://via.placeholder.com/600" alt="Project 2">
-            <p>프로젝트 2 설명: 이 프로젝트는 ... 입니다.</p>
-        </div>
-    </div>
-
-    <!-- Contact 섹션 -->
-    <div id="contact" class="content">
-        <h1>Contact</h1>
-        <p>이메일: example@example.com</p>
-        <p>전화번호: 010-1234-5678</p>
-    </div>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function showPage(pageId) {
-            // 모든 페이지를 숨기고 선택한 페이지만 표시
-            document.getElementById('about').classList.remove('active');
-            document.getElementById('portfolio').classList.remove('active');
-            document.getElementById('contact').classList.remove('active');
-            
-            document.getElementById(pageId).classList.add('active');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#5eead4',
+                            500: '#2dd4bf',
+                            600: '#0d9488'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"SUIT"', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
         }
     </script>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col font-sans">
+    <!-- 네비게이션 바 -->
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
+        <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+            <a href="#about" class="text-lg font-semibold tracking-tight text-slate-900">
+                My Portfolio
+            </a>
+            <div class="flex items-center gap-6 text-sm">
+                <a href="#about" class="text-slate-600 hover:text-brand-500 transition-colors">About Me</a>
+                <a href="#portfolio" class="text-slate-600 hover:text-brand-500 transition-colors">Portfolio</a>
+                <a href="#contact" class="text-slate-600 hover:text-brand-500 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
 
+    <main class="flex-1">
+        <!-- About Me 섹션 -->
+        <section id="about" class="max-w-5xl mx-auto px-4 py-16">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-500">
+                About
+            </p>
+            <h1 class="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                안녕하세요! 웹 개발을 좋아하는 프론트엔드 개발자입니다.
+            </h1>
+            <p class="mt-4 text-sm md:text-base leading-relaxed text-slate-600">
+                다양한 프로젝트와 기술을 활용하여 사용성이 좋고 보기에도 아름다운 웹 페이지와
+                애플리케이션을 만드는 것에 관심이 많습니다. 새로운 기술을 배우고 실제 서비스에
+                적용해 보는 경험을 즐깁니다.
+            </p>
+        </section>
+
+        <!-- Portfolio 섹션 -->
+        <section id="portfolio" class="max-w-5xl mx-auto px-4 py-16 border-t border-slate-800">
+            <div class="flex items-end justify-between gap-4">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-500">
+                        Work
+                    </p>
+                    <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
+                        Portfolio
+                    </h2>
+                </div>
+                <p class="hidden md:block text-xs text-slate-500">
+                    실제로 진행했던 사이드 프로젝트 또는 연습 프로젝트들을 정리한 공간입니다.
+                </p>
+            </div>
+
+            <div class="mt-8 grid gap-6 md:grid-cols-2">
+                <article class="group rounded-2xl border border-slate-200 bg-slate-50 p-4 hover:border-brand-500/80 hover:bg-teal-50 transition">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="https://via.placeholder.com/600"
+                             alt="Project 1"
+                             class="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <h3 class="mt-4 text-lg font-semibold text-slate-900">
+                        프로젝트 1
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        반응형 레이아웃과 애니메이션을 활용하여 사용자가 편리하게 정보를 탐색할 수 있는
+                        랜딩 페이지를 구현한 프로젝트입니다.
+                    </p>
+                </article>
+
+                <article class="group rounded-2xl border border-slate-200 bg-slate-50 p-4 hover:border-brand-500/80 hover:bg-teal-50 transition">
+                    <div class="overflow-hidden rounded-xl">
+                        <img src="https://via.placeholder.com/600"
+                             alt="Project 2"
+                             class="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <h3 class="mt-4 text-lg font-semibold text-slate-900">
+                        프로젝트 2
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        공공 API를 연동하여 다양한 데이터를 시각화하고 필터링할 수 있는
+                        대시보드 형식의 웹 애플리케이션을 제작했습니다.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact 섹션 -->
+        <section id="contact" class="max-w-5xl mx-auto px-4 py-16 border-t border-slate-800">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-500">
+                Contact
+            </p>
+            <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
+                함께 멋진 것을 만들어 볼까요?
+            </h2>
+            <p class="mt-4 text-sm md:text-base leading-relaxed text-slate-600">
+                협업 제안, 채용 제안 또는 궁금한 점이 있다면 메일로 연락 주세요.
+                가능한 한 빠르게 답장드리겠습니다.
+            </p>
+
+            <div class="mt-6 space-y-3 text-sm md:text-base text-slate-700">
+                <p>
+                    <span class="font-medium text-slate-900">이메일</span>
+                    <span class="ml-2 text-brand-500">example@example.com</span>
+                </p>
+                <p>
+                    <span class="font-medium text-slate-900">전화번호</span>
+                    <span class="ml-2 text-slate-700">010-1234-5678</span>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+        © 2025 My Portfolio. All rights reserved.
+    </footer>
 </body>
 </html>

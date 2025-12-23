@@ -3,70 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+    <title>Contact | My Portfolio</title>
+    <!-- Tailwind & Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#5eead4',
+                            500: '#2dd4bf',
+                            600: '#0d9488'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"SUIT"', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
         }
-
-        /* 네비게이션 바 스타일 */
-        nav {
-            background-color: #333;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #ddd;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .portfolio-item {
-            margin-bottom: 30px;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        /* 페이지에 따라 보이도록 설정 */
-        #about, #portfolio, #contact {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
-    </style>
+    </script>
 </head>
-<body>
-
+<body class="bg-white text-slate-900 min-h-screen flex flex-col font-sans">
     <!-- 네비게이션 바 -->
-    <nav>
-        <a href="about.html">About Me</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
+        <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+            <a href="index.html#about" class="text-lg font-semibold tracking-tight text-slate-900">
+                My Portfolio
+            </a>
+            <div class="flex items-center gap-6 text-sm">
+                <a href="index.html#about" class="text-slate-600 hover:text-brand-500 transition-colors">About Me</a>
+                <a href="index.html#portfolio" class="text-slate-600 hover:text-brand-500 transition-colors">Portfolio</a>
+                <a href="index.html#contact" class="text-brand-500 font-medium">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- Contact 섹션 -->
-    <div class="content">
-        <h1>Contact</h1>
-        <p>이메일: example@example.com</p>
-        <p>전화번호: 010-1234-5678</p>
-    </div>
+    <main class="flex-1">
+        <section class="max-w-5xl mx-auto px-4 py-16">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-500">
+                Contact
+            </p>
+            <h1 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                함께 이야기 나눠요.
+            </h1>
+            <p class="mt-4 text-sm md:text-base leading-relaxed text-slate-600">
+                협업, 채용, 스터디 등 어떤 이야기라도 환영합니다.
+                아래 정보로 편하게 연락 주세요.
+            </p>
 
+            <div class="mt-8 grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+                <div class="space-y-4 text-sm md:text-base text-slate-700">
+                    <div>
+                        <span class="block text-xs font-semibold tracking-wide text-slate-500 uppercase">
+                            Email
+                        </span>
+                        <p class="mt-1 text-brand-500">
+                            example@example.com
+                        </p>
+                    </div>
+                    <div>
+                        <span class="block text-xs font-semibold tracking-wide text-slate-500 uppercase">
+                            Phone
+                        </span>
+                        <p class="mt-1">
+                            010-1234-5678
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <h2 class="text-sm font-semibold text-slate-900">
+                        간단한 메세지를 남겨주세요 (UI 데모)
+                    </h2>
+                    <form class="mt-4 space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">
+                                이름
+                            </label>
+                            <input
+                                type="text"
+                                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                                placeholder="이름을 입력해 주세요."
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">
+                                이메일
+                            </label>
+                            <input
+                                type="email"
+                                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                                placeholder="example@example.com"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1">
+                                메세지
+                            </label>
+                            <textarea
+                                rows="4"
+                                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 resize-none"
+                                placeholder="간단한 내용을 남겨 주세요. (현재는 전송되지 않는 UI 데모입니다.)"
+                            ></textarea>
+                        </div>
+                        <button
+                            type="button"
+                            class="inline-flex items-center justify-center rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors"
+                        >
+                            메세지 보내기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+        © 2025 My Portfolio. All rights reserved.
+    </footer>
 </body>
 </html>

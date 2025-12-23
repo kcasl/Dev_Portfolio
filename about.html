@@ -3,69 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+    <title>About Me | My Portfolio</title>
+    <!-- Tailwind & Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#5eead4',
+                            500: '#2dd4bf',
+                            600: '#0d9488'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"SUIT"', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
         }
-
-        /* 네비게이션 바 스타일 */
-        nav {
-            background-color: #333;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #ddd;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .portfolio-item {
-            margin-bottom: 30px;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        /* 페이지에 따라 보이도록 설정 */
-        #about, #portfolio, #contact {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
-    </style>
+    </script>
 </head>
-<body>
-
+<body class="bg-white text-slate-900 min-h-screen flex flex-col font-sans">
     <!-- 네비게이션 바 -->
-    <nav>
-        <a href="about.html">About Me</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
+        <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+            <a href="index.html#about" class="text-lg font-semibold tracking-tight text-slate-900">
+                My Portfolio
+            </a>
+            <div class="flex items-center gap-6 text-sm">
+                <a href="index.html#about" class="text-brand-500 font-medium">About Me</a>
+                <a href="index.html#portfolio" class="text-slate-600 hover:text-brand-500 transition-colors">Portfolio</a>
+                <a href="index.html#contact" class="text-slate-600 hover:text-brand-500 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- About Me 섹션 -->
-    <div class="content">
-        <h1>About Me</h1>
-        <p>안녕하세요! 저는 웹 개발을 좋아하는 개발자입니다. 다양한 프로젝트와 기술을 활용하여 웹 페이지와 애플리케이션을 만드는 것에 관심이 많습니다.</p>
-    </div>
+    <main class="flex-1">
+        <section class="max-w-5xl mx-auto px-4 py-16">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-500">
+                About
+            </p>
+            <h1 class="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                안녕하세요! 웹 개발을 좋아하는 개발자입니다.
+            </h1>
+            <p class="mt-4 text-sm md:text-base leading-relaxed text-slate-600">
+                저는 사용자 경험을 중심에 두고 인터페이스를 설계하는 것을 좋아합니다.
+                HTML, CSS, JavaScript를 기본으로, 다양한 프레임워크와 라이브러리를 학습하며
+                실제로 동작하는 결과물을 만드는 것에 큰 보람을 느낍니다.
+            </p>
+            <p class="mt-4 text-sm md:text-base leading-relaxed text-slate-600">
+                새로운 기술을 접하면 작은 실험 프로젝트를 통해 먼저 사용해 보고,
+                그 과정에서 얻은 인사이트를 정리해 두었다가 실제 프로젝트에 적용하는 편입니다.
+                꾸준히 성장하는 개발자가 되는 것이 목표입니다.
+            </p>
 
+            <div class="mt-8 grid gap-6 md:grid-cols-2">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <h2 class="text-sm font-semibold text-slate-900">Skills</h2>
+                    <ul class="mt-3 space-y-1 text-sm text-slate-600">
+                        <li>HTML / CSS / JavaScript</li>
+                        <li>반응형 UI 설계 및 구현</li>
+                        <li>기본적인 Git & GitHub 활용</li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <h2 class="text-sm font-semibold text-slate-900">Interests</h2>
+                    <ul class="mt-3 space-y-1 text-sm text-slate-600">
+                        <li>UI/UX 디자인과 프로토타이핑</li>
+                        <li>애니메이션을 활용한 인터랙티브 웹</li>
+                        <li>개인 사이드 프로젝트 및 TIL 기록</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+        © 2025 My Portfolio. All rights reserved.
+    </footer>
 </body>
 </html>
