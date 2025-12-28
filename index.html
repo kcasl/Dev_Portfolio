@@ -618,10 +618,10 @@
                         <article class="award-card flex flex-col rounded-2xl border border-slate-200 bg-slate-50 p-4">
                             <div class="mx-auto w-full max-w-[180px]">
                                 <div class="relative overflow-hidden rounded-lg border border-slate-200 bg-slate-100 aspect-[210/297]">
-                                    <img
+                            <img
                                         src="awards/KakaoTalk_20251228_224320979_02.jpg"
                                         alt="현대모비스 청년 공학 학술대회 최우수상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -741,7 +741,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979_09.jpg"
                                         alt="대한기계학회 제14회 전국학생설계경진대회 은상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -765,7 +765,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979_06.jpg"
                                         alt="현대모비스 청소년 공학리더 자율주행 경진대회 우수상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -789,7 +789,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979_05.jpg"
                                         alt="현대모비스 제8회 청년 공학 학술대회 우수상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -813,7 +813,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979_01.jpg"
                                         alt="한국컴퓨터종합학술대회 주니어 논문경진대회 장려상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -837,7 +837,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979_07.jpg"
                                         alt="프로그래밍기초 교과 우수상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -861,7 +861,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979.jpg"
                                         alt="Hana Dreamers IT 멘토링 수료증 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -885,7 +885,7 @@
                                     <img
                                         src="awards/KakaoTalk_20251228_224320979_04.jpg"
                                         alt="대한기계학회 제13회 전국학생설계경진대회 동상 상장 이미지"
-                                        class="h-full w-full object-cover"
+                                        class="h-full w-full object-cover js-image-preview cursor-zoom-in"
                                     >
                                 </div>
                             </div>
@@ -1046,15 +1046,6 @@
 
         // 이미지 클릭 시 모달 열기 + 수상 가로 스크롤 카드 채우기
         document.addEventListener('DOMContentLoaded', function () {
-            const images = document.querySelectorAll('.js-image-preview');
-            images.forEach(function (img) {
-                img.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    openImageModal(img.src, img.alt);
-                });
-            });
-
             const awardsScroll = document.getElementById('awards-scroll');
             const awardsExpanded = document.getElementById('awards-expanded');
             if (awardsScroll && awardsExpanded) {
@@ -1068,6 +1059,15 @@
                     awardsScroll.appendChild(clone);
                 });
             }
+
+            const images = document.querySelectorAll('.js-image-preview');
+            images.forEach(function (img) {
+                img.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openImageModal(img.src, img.alt);
+                });
+            });
         });
     </script>
 </body>
